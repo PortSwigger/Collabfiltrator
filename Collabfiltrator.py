@@ -86,7 +86,10 @@ class BurpExtender (IBurpExtender, ITab, IBurpCollaboratorInteraction, IBurpExte
         self.burpCollaboratorDomainTxt.setEditable(False)
         self.burpCollaboratorDomainTxt.setBackground(None)
         self.burpCollaboratorDomainTxt.setBorder(None)
-        self.t1r1.add(swing.JLabel("<html><center><h2>Collabfiltrator</h2>Exfiltrate blind remote code execution output over DNS via Burp Collaborator.</center></html>"))
+        titleLabel = swing.JLabel(
+            "<html><center><h2>Collabfiltrator</h2>Exfiltrate blind remote code execution output over DNS via Burp Collaborator.</center></html>")
+        titleLabel.putClientProperty("html.disable", None)
+        self.t1r1.add(titleLabel)
         self.t1r2.add(swing.JLabel("Platform"))
         self.t1r2.add(self.osComboBox)
         self.t1r2.add(swing.JLabel("Command"))
