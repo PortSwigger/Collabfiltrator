@@ -1,13 +1,13 @@
 Uuid: fff2b36e392f49afbeb363403c07c6b8
-ExtensionType: 2
+ExtensionType: 1
 Name: Collabfiltrator
 RepoName: collabfiltrator
-ScreenVersion: 2.1a
-SerialVersion: 8
-MinPlatformVersion: 0
+ScreenVersion: 4.0.1
+SerialVersion: 10
+MinPlatformVersion: 16
 ProOnly: True
 Author: Adam Logue, Frank Scarpella, Jared McLaren, Ryan Griffin
-ShortDescription: Exfiltrate blind remote code execution output over DNS via Burp Collaborator
-EntryPoint: Collabfiltrator.py
-BuildCommand: 
+ShortDescription: Exfiltrate Blind Remote Code Execution and SQL injection output over DNS via Burp Collaborator.
+EntryPoint: target/Collabfiltrator.jar
+BuildCommand: mvn package
 SupportedProducts: Pro

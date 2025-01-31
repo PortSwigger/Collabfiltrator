@@ -1,15 +1,49 @@
-<p>Turn Blind RCE into Good RCE!</p>
+<p>This Burp Extension assists in exfiltration of blind Remote Code Execution output and SQL injection output over DNS via Burp Collaborator.</p>
 
-<p>This Burp Extension assists in exfiltration of blind remote code execution
-output over DNS via Burp Collaborator.</p>
+<h2>RCE Exfiltration</h2>
 
-<p>Usage:</p>
+<h3>Usage</h3>
 
-<p>Select a platform from the dropdown menu, enter the desired command, and press Execute. A payload will be generated for the platform you choose. Select Copy Payload to Clipboard, run the generated payload on your target, and wait for results to appear in the output window.</p>
+<ol>
+	<li>Select a platform from the dropdown menu.</li>
+	<li>Enter the desired command.</li>
+	<li>Press "Execute". This will generate a payload for your chosen platform.</li>
+	<li>Select "Copy payload to clipboard".</li>
+	<li>Execute the generated payload on your target.</li>
+	<li>Wait for results to appear in the output window.</li>
+</ol>
 
-<p>Supported Targets:</p>
+<h3>Supported RCE targets</h3>
 
 <ul>
-	<li>Windows (powershell)</li>
+	<li>Windows (Powershell)</li>
 	<li>Linux (sh + ping)</li>
+	<li>Linux (sh + nslookup)</li>
+	<li>Linux (bash + ping)</li>
+	<li>Linux (bash + nslookup)</li>
+</ul>
+
+<h2>SQLi Exfiltration</h2>
+
+<h3>Usage</h3>
+
+<ol>
+	<li>Select a DBMS and extraction query type from the dropdown menu.</li>
+	<li>Toggle between hex encoding output during DNS exfiltration (to preserve special characters, spaces, etc) or plaintext exfiltration.</li>
+	<li>Press "Dump". This will generate a payload for the chosen DBMS.</li>
+	<li>Select "Copy payload to clipboard".</li>
+	<li>Run the generated SQL query on your target.</li>
+	<li>Wait for results to appear in the output window.<br>
+		Extracted "table" and "column" data will populate in subsequent "column" and "row" payloads.
+	</li>
+</ol>
+
+<h3>Supported SQLi targets</h3>
+
+<ul>
+	<li>Microsoft SQL Server (Stacked Queries)</li>
+	<li>MySQL (Windows)</li>
+	<li>PostgreSQL (Elevated Privileges)</li>
+	<li>Oracle (Elevated Privileges)</li>
+	<li>Oracle (XML External Entities)</li>
 </ul>
